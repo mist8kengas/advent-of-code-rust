@@ -1,4 +1,5 @@
 mod day1;
+mod day2;
 
 fn main() {
     use std::time::Instant;
@@ -27,6 +28,33 @@ fn main() {
 
             let time_elapsed = time_now.elapsed();
             println!("[day1.2:perf] time: {:?}\n", time_elapsed);
+        }
+    }
+
+    // day 2
+    {
+        let input_day_2 = read_lines(String::from("day-2-input.txt"));
+
+        // part 1
+        {
+            let time_now = Instant::now();
+
+            let sum = day2::part1(input_day_2.clone());
+            println!("[day2.1:info] answer: {}", sum);
+
+            let time_elapsed = time_now.elapsed();
+            println!("[day2.1:perf] time: {:?}\n", time_elapsed);
+        }
+
+        // part 2
+        {
+            let time_now = Instant::now();
+
+            let sum = day2::part2(input_day_2.clone());
+            println!("[day2.2:info] answer: {}", sum);
+
+            let time_elapsed = time_now.elapsed();
+            println!("[day2.2:perf] time: {:?}\n", time_elapsed);
         }
     }
 }
